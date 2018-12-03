@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.del.ssm.module.user.mapper.UserMapper">
+
+
+    <insert id="add" parameterType="com.del.ssm.module.user.entity.User">
+        INSERT INTO dell_user
+        (username, password)
+        VALUES
+        (#{username},#{password})
+    </insert>
+
+    <select id="get" parameterType="Integer" resultType="com.del.ssm.module.user.entity.User">
+        SELECT * FROM dell_user WHERE id=#{id}
+    </select>
+
+    <!--<resultMap id="UserResult" type="com.del.ssm.admin.module.user.mapper.UserMapper" >-->
+        <!--<id property="id" column="id"/>-->
+        <!--<result property="username" column="username"/>-->
+        <!--<result property="password" column="password"/>-->
+    <!--</resultMap>-->
+</mapper>
